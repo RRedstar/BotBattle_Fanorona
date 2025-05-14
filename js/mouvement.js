@@ -6,8 +6,6 @@ function valid_move(start, end){
     if (keys.indexOf(end) == -1)
         return false
 
-    console.log("coordinates in range");
-
     let x_start = parseInt(start[0]);
     let y_start = parseInt(start[1]);
     let x_end = parseInt(end[0]);
@@ -16,12 +14,10 @@ function valid_move(start, end){
     // Vérifier si end est libre
     if (global_position[end] != "")
         return false;
-    console.log("target open");
 
     // Vérifier que start contient un point
     if (global_position[start] == "")
         return false;
-    console.log("point in origin");
     
 
     // Au centre le point peut aller dans toutes les direction
@@ -35,8 +31,6 @@ function valid_move(start, end){
     if (start_sum%2==1 && end_sum%2==1)
         return false;
 
-    console.log("check diagonal");
-
     // Vérifie qu'on ne saute pas de case
     let cond1 = (x_start-x_end)*(x_start-x_end) < 2;
     let cond2 = (y_start-y_end)*(y_start-y_end) < 2;
@@ -44,8 +38,6 @@ function valid_move(start, end){
 
     if (cond1 && cond2)
         return true;
-
-    console.log("step clean");
 
     // Autre
     return false
@@ -55,7 +47,6 @@ function move(origin, target){
     // exemple: move("00","01")
     // Check si le déplacement est valide
     let can_move = valid_move(origin, target);
-    console.log(can_move);
 
     if (!can_move) {
         console.log("Mouvement non valide : '" + origin + "' to '" + target + "'!");
@@ -71,12 +62,24 @@ function move(origin, target){
     // Récupérer le point et le déplacer
     let point = global_position[origin];
 
-    point.style.left = left;
-    point.style.top = top;
+    point.style.left = left + "px";
+    point.style.top = top + "px";
 
     // Mettre à jour global_position
     global_position[origin] = "";
     global_position[target] = point;
 
+    // Mettre à jour la matrice
+    let x_origin = parseInt(origin[0]);
+    let y_origin = parseInt(origin[1]);
+    let x_target = parseInt(target[0]);
+    let y_target = parseInt(target[1]);
+
+    side = point.className.search('-1') == -1 ? 1 : -1;
+    current_position[x_origin][y_origin] = 0;
+    current_position[x_target][y_target] = side;
+
     console.log("'" + origin + "' to '" + target + "'!");
+
+    winner(current_position);
 }
