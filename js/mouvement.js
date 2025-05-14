@@ -50,7 +50,7 @@ function move(origin, target){
 
     if (!can_move) {
         console.log("Mouvement non valide : '" + origin + "' to '" + target + "'!");
-        return;
+        return false;
     }
 
     // Si oui, on déplace le point
@@ -82,4 +82,16 @@ function move(origin, target){
     console.log("'" + origin + "' to '" + target + "'!");
 
     winner(current_position);
+    return true    
+}
+
+function make_me_win(){
+    move('00','11');
+    move('20','10');
+    move('11','12');
+    move('10','00');
+    move('01','11');
+    move('21','20');
+    move('11','21');
+    move('20','11');
 }
