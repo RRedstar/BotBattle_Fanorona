@@ -10,6 +10,24 @@
     border: 1px solid black;
     background-image: url("../img/diag.jpg");
     background-size: cover;
+    position: relative;
     height: 300px;
     width: 300px;
+}
+
+.point{
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px gray;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    transition: .5s ease-out;
+}
+
+.point.p1{
+    background-color: dodgerblue;
+}
+
+.point.p-1{
+    background-color: rgb(30, 167, 76);
 }

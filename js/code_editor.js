@@ -12,5 +12,3 @@ let editor = CodeMirror.fromTextArea(editZone, {
   async function runCode() {
     console.log("Alefa Barea!!!");
   }
-
-  document.getElementById("run-btn").addEventListener("click", runPython);
