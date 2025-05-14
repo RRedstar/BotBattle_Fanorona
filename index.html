@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bot Battle</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/stream_zone.css">
+  <link rel="stylesheet" href="css/code_zone.css">
+
+</head>
+<body>
+  <header></header>
+  <section id="principal">
+    <div id="stream_zone">
+        <div id="game">
+
+        </div>
+
+        <div id="output"></div>
+    </div>
+
+    <div class="code_zone">
+        <textarea id="editor">def main(game_position):
+            """
+            params:
+                game_position: matrice d'entiers 3x3
+            return:
+                move: array of two tuple [(coordinate_origin),(to_coordinate)]
+            """</textarea>
+        <button id="run-btn"> Run </button>
+    </div>
+    
+  </section>
+  
+
+  <!-- CodeMirror -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+  <script src="js/code_editor.js"></script>
+
+</body>
+</html>

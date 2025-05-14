@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+  }
+
+  #editor {
+    height: 90vh;
+  }
+
+  #run-btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  #output {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    background: #f9f9f9;
+    height: 10vh;
+    overflow-y: auto;
+    font-family: monospace;
+    white-space: pre-wrap;
+  }
+
+  header{
+    height: 70px;
+    background-color: darkslategray;
+  }
+  
+  #principal{
+    display: flex;
+    flex-direction: row;
+  }

@@ -1,0 +1,15 @@
+#stream_zone{
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#game{
+    border: 1px solid black;
+    background-image: url("../img/diag.jpg");
+    background-size: cover;
+    height: 300px;
+    width: 300px;
+}
