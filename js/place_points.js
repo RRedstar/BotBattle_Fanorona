@@ -59,6 +59,14 @@ function initialise_points(position){
     // 1 : own_point
     // 0 : libre
 
+    // Nettoyer la table
+    for (c in global_position){
+        child = global_position[c];
+        if (child == "")
+            continue
+        table.removeChild(child);
+    }
+
     // Parcourir la matrice de position
     for (let r = 0; r < position.length; r++){
         // pour chaque ligne
@@ -81,7 +89,6 @@ function initialise_points(position){
 
 
 function colinear(p_list){
-    console.log(p_list);
     ax = p_list[0][0];
     ay = p_list[0][1];
 
@@ -93,59 +100,7 @@ function colinear(p_list){
 
     // Calculer le det
     det = ax*(by-cy) + bx*(cy-ay) + cx*(ay-by);
-    console.log(det);
     return det == 0;
-}
-
-function winner(pos){
-    // Détermine si le jeu est terminé ou non    
-    let initial_p2 = pos[0] != [-1,-1,-1];
-    let initial_p1 = pos[2] != [ 1, 1, 1];    
-
-    // Récupère les points de chaque joueur
-    let p1 = [];
-    let p2 = [];
-
-    // Parcourir les points dans la position actuelle
-    for (let r = 0; r < pos.length; r++){
-        // pour chaque ligne
-        let row = pos[r];
-        for (let c = 0; c < row.length; c++){
-            // pour chaque colonne récup la valeur du point
-            let side = row[c];
-
-            if (side == 0)
-                continue
-            
-            p = [r,c]
-            side == 1 ? p1.push(p) : p2.push(p)
-        }
-    }
-
-    console.log(colinear(p1));
-    // déterminer si p1 gagne
-    if (colinear(p1) && initial_p1){
-        alert("Le Joueur 1 a gagné!");
-        initialise_points(
-            [[-1,-1,-1],
-            [ 0, 0, 0],
-            [ 1, 1, 1]]
-        );
-        return
-    }
-        
-
-    // déterminer si p2 gagne
-    else if (colinear(p2) && initial_p2){
-        alert("Le Joueur 2 a gagné!");
-        initialise_points(
-            [[-1,-1,-1],
-            [ 0, 0, 0],
-            [ 1, 1, 1]]
-        );
-        return
-    }
-        
 }
 
 initialise_points(
