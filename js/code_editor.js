@@ -4,7 +4,9 @@ editZone = document.getElementById("editor")
 let editor = CodeMirror.fromTextArea(editZone, {
     mode: "python",
     lineNumbers: true,
-    theme: "default",
+    theme: "darcula",
+    autoCloseBrackets: true,
+    extraKeys: {"Ctrl-Space":"autocomplete"},
   });
 
   let output = document.getElementById("output");

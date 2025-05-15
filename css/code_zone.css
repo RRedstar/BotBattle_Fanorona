@@ -1,3 +1,9 @@
 #code_zone{
-    width: 50%;
+    display: inline;
+    max-width: 65%;
+    padding: 20px;
+}
+.CodeMirror.cm-s-darcula {
+    height: 80vh;
+    width: 100%;
 }
