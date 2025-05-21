@@ -1,4 +1,5 @@
 table = document.getElementById("game");
+run_btn = document.getElementById("run-btn");
 
 const t_size = 300; //dimension de la table
 const p_size = 10; //taille du point/2
@@ -87,7 +88,6 @@ function initialise_points(position){
     }   
 }
 
-
 function colinear(p_list){
     ax = p_list[0][0];
     ay = p_list[0][1];
@@ -109,3 +109,8 @@ initialise_points(
      [ 1, 1, 1]]
 );
 
+function run_script(){
+    console.log("Script ran!");
+}
+
+run_btn.onclick = run_script;

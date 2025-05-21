@@ -79,6 +79,7 @@ function winner(pos){
         }
     }
 
+    return
     // déterminer si p1 gagne
     if (colinear(p1) && initial_p1){
         alert("Le Joueur 1 a gagné!");
